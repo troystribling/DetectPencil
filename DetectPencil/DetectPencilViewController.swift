@@ -14,6 +14,7 @@ class DetectPencilViewController: UIViewController, CBCentralManagerDelegate {
     @IBOutlet weak var statusLabel: UILabel!
 
     var central: CBCentralManager!
+    var timer: Timer?
 
     override func viewDidLoad() {
         central = CBCentralManager(delegate: self, queue: DispatchQueue.main)
@@ -26,8 +27,9 @@ class DetectPencilViewController: UIViewController, CBCentralManagerDelegate {
         switch central.state {
         case .poweredOn:
             getConnectedPeripherals()
+            startTimer()
         default:
-            break
+            stopTimer()
         }
     }
 
@@ -49,6 +51,17 @@ class DetectPencilViewController: UIViewController, CBCentralManagerDelegate {
             setDisconnectedStatus()
         }
 
+    }
+
+    func stopTimer() {
+        timer?.invalidate()
+        timer = nil
+    }
+
+    func startTimer() {
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
+            self?.getConnectedPeripherals()
+        }
     }
 
     func setDisconnectedStatus() {
