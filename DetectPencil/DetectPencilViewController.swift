@@ -11,11 +11,8 @@ import CoreBluetooth
 
 class DetectPencilViewController: UIViewController, CBCentralManagerDelegate {
 
-    enum SegueIdentifier: String {
-        case detectPencilToConnectPeripherals
-    }
+    @IBOutlet weak var statusLabel: UILabel!
 
-    var tableView: ConnectPeripheralsTableViewController!
     var central: CBCentralManager!
 
     override func viewDidLoad() {
@@ -23,24 +20,44 @@ class DetectPencilViewController: UIViewController, CBCentralManagerDelegate {
         super.viewDidLoad()
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let identifier = segue.identifier, let segueIdentifier = SegueIdentifier(rawValue: identifier) else {
-            return
-        }
-        switch segueIdentifier {
-        case .detectPencilToConnectPeripherals:
-            tableView = segue.destination as? ConnectPeripheralsTableViewController
-        }
-    }
-
     // CBCentralManagerDelegate
 
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         switch central.state {
         case .poweredOn:
-            break
+            getConnectedPeripherals()
         default:
             break
         }
+    }
+
+    func getConnectedPeripherals() {
+        guard central.state == .poweredOn else {
+            return
+        }
+        var status = false
+        let peripherals = central.retrieveConnectedPeripherals(withServices: [CBUUID(string: "180A")])
+        for peripheral in peripherals {
+            if let name = peripheral.name, name == "Apple Pencil" {
+                status = true
+                break
+            }
+        }
+        if status {
+            setConnectedStatus()
+        } else {
+            setDisconnectedStatus()
+        }
+
+    }
+
+    func setDisconnectedStatus() {
+        statusLabel.text = "Disconnected"
+        statusLabel.textColor = .red
+    }
+
+    func setConnectedStatus() {
+        statusLabel.text = "Connected"
+        statusLabel.textColor = .green
     }
 }

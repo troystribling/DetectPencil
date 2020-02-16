@@ -13,8 +13,6 @@
 		05576F1223F8BCF100329C94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05576F1123F8BCF100329C94 /* Assets.xcassets */; };
 		05576F1523F8BCF100329C94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05576F1323F8BCF100329C94 /* LaunchScreen.storyboard */; };
 		05576F1F23F8BEEF00329C94 /* DetectPencilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05576F1E23F8BEEF00329C94 /* DetectPencilViewController.swift */; };
-		05576F2123F8BF0D00329C94 /* ConnectPeripheralsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05576F2023F8BF0D00329C94 /* ConnectPeripheralsTableViewController.swift */; };
-		05576F2323F8C12300329C94 /* ConnectedPeripheralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05576F2223F8C12300329C94 /* ConnectedPeripheralTableViewCell.swift */; };
 		05576F2623F8C1AD00329C94 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05576F2523F8C1AD00329C94 /* CoreBluetooth.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,8 +25,6 @@
 		05576F1423F8BCF100329C94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05576F1623F8BCF100329C94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05576F1E23F8BEEF00329C94 /* DetectPencilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectPencilViewController.swift; sourceTree = "<group>"; };
-		05576F2023F8BF0D00329C94 /* ConnectPeripheralsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectPeripheralsTableViewController.swift; sourceTree = "<group>"; };
-		05576F2223F8C12300329C94 /* ConnectedPeripheralTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedPeripheralTableViewCell.swift; sourceTree = "<group>"; };
 		05576F2523F8C1AD00329C94 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -67,8 +63,6 @@
 				05576F0823F8BCEE00329C94 /* AppDelegate.swift */,
 				05576F0A23F8BCEE00329C94 /* SceneDelegate.swift */,
 				05576F1E23F8BEEF00329C94 /* DetectPencilViewController.swift */,
-				05576F2223F8C12300329C94 /* ConnectedPeripheralTableViewCell.swift */,
-				05576F2023F8BF0D00329C94 /* ConnectPeripheralsTableViewController.swift */,
 				05576F0E23F8BCEE00329C94 /* Main.storyboard */,
 				05576F1123F8BCF100329C94 /* Assets.xcassets */,
 				05576F1323F8BCF100329C94 /* LaunchScreen.storyboard */,
@@ -158,8 +152,6 @@
 			files = (
 				05576F0923F8BCEE00329C94 /* AppDelegate.swift in Sources */,
 				05576F1F23F8BEEF00329C94 /* DetectPencilViewController.swift in Sources */,
-				05576F2123F8BF0D00329C94 /* ConnectPeripheralsTableViewController.swift in Sources */,
-				05576F2323F8C12300329C94 /* ConnectedPeripheralTableViewCell.swift in Sources */,
 				05576F0B23F8BCEE00329C94 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

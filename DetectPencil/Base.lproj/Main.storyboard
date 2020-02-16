@@ -15,73 +15,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JOp-N8-ocF">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mZg-Ya-f8B">
+                                <rect key="frame" x="140.5" y="323" width="133.5" height="50.5"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4x-Aq-VYT">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="245.5"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pBr-Qj-yM8">
-                                        <rect key="frame" x="0.0" y="245.5" width="414" height="50"/>
-                                        <color key="backgroundColor" red="0.93075347409964837" green="0.93075347409964837" blue="0.93075347409964837" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="lvY-fN-iYr"/>
-                                        </constraints>
-                                    </view>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sim-ea-Q1P">
-                                        <rect key="frame" x="0.0" y="296" width="414" height="522"/>
-                                        <connections>
-                                            <segue destination="Qik-y1-I3n" kind="embed" identifier="detectPencilToConnectPeripherals" id="1sy-GB-gJk"/>
-                                        </connections>
-                                    </containerView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple Pencil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIV-7Z-PJI">
+                                        <rect key="frame" x="0.0" y="0.0" width="133.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VjA-lU-9EY">
+                                        <rect key="frame" x="42" y="30" width="49.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="F4x-Aq-VYT" firstAttribute="height" secondItem="JOp-N8-ocF" secondAttribute="height" multiplier="0.3" id="3LS-E2-dhp"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="JOp-N8-ocF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1VM-rS-yUN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JOp-N8-ocF" secondAttribute="trailing" id="QN6-oE-RAJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JOp-N8-ocF" secondAttribute="bottom" id="Usv-HG-Un4"/>
-                            <constraint firstItem="JOp-N8-ocF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cUK-7n-vZZ"/>
+                            <constraint firstItem="mZg-Ya-f8B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="34V-eR-IKb"/>
+                            <constraint firstItem="mZg-Ya-f8B" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-100" id="Cgf-5w-8V7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="statusLabel" destination="VjA-lU-9EY" id="tyZ-Ub-O8a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="49" y="121"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="dEK-pC-eap">
-            <objects>
-                <tableViewController id="Qik-y1-I3n" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yP0-rC-LiI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="522"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="connectdPeripheralTableViewCell" rowHeight="100" id="wCY-jl-Q5o" customClass="ConnectdPeripheralTableViewCell" customModule="DetectPencil" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wCY-jl-Q5o" id="GTa-ng-1Zw">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Qik-y1-I3n" id="v6F-N9-inF"/>
-                            <outlet property="delegate" destination="Qik-y1-I3n" id="KLg-Nb-9yB"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TdH-jq-cm8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="839" y="121"/>
         </scene>
     </scenes>
 </document>
